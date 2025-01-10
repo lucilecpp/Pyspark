@@ -1,4 +1,4 @@
-<h1 style="text-align: center; font-size: 2.5em;"><u><em>Projet TD PySpark 🚀</em></u></h1> 
+<h1 style="text-align: center; font-size: 2.5em;"><u><em>Projet TD PySpark</em></u></h1> 
 
 
 
