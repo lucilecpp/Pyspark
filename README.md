@@ -1,83 +1,50 @@
-# Pyspark tutorial
+<h1 style="text-align: center; font-size: 2.5em;"><u><em>Projet TD PySpark</em></u></h1>
 
-Welcome to the Pyspark tutorial section.
 
-The courses comprises of 4 folders containing notebooks. Folders and notebooks are sorted in order of difficulty given their name, so you should follow the numerotation. For example, you should finish all notebooks in `1-beginner` before starting `2-novice`. Likewise, when doing `2-novice` finish the `1-...` notebook before doing `2-...`.
+<img src="image-1.png" alt="alt text" style="display: block; margin: 0 auto;">
 
-Inside each notebook, we have documented a number of questions and unimplemented code cells answering the question, followed by a code cell which acts as test cases for the function called `Graded cell`. Your submission will be graded on how many test cases you pass given your implementation of the previous function. 
+Ce projet contient des notebooks Jupyter pour apprendre et expérimenter avec Apache Spark en utilisant PySpark. Il est divisé en trois niveaux de difficulté : débutant, novice et avancé.
 
-**PS**: The instructor has hidden test cases on his side so don't try to circumvent the system by just returning the expected value in your method.
+## Table des matières
 
-## Prerequisites
+- [Contenu des notebooks](#contenu-des-notebooks)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Auteur](#auteur)
 
-- [Anaconda 2019+](https://www.anaconda.com/download/)
-- Required Java 8/11. 
-    - You can set the `JAVA_HOME` environment variable to point to the Java 8/11 folder you want to use for the project, from `Edit the system environment variables` window or `set JAVA_HOME=<path_to_java>` in command-line before running `jupyter notebook`. 
-    - You may also install Java OpenJDK **inside** your Anaconda environment with `conda install openjdk`. The `JAVA_HOME` variable should be automatically updated for this environment only.
 
-## Run
+## Contenu des notebooks
 
-We provide you with a `requirements.txt` which is used to download dependencies in a conda environment we will name `pyspark-tutorial`.
+- **1-beginner** : 
+    - [1-Initiation.ipynb](1-beginner/1-Initiation.ipynb). Introduction à PySpark. Ce notebook couvre les bases de l'utilisation de PySpark, y compris la création de RDDs, les transformations et les actions de base.
+- **2-novice** :
+  - [1-Initiation-RDD.ipynb](2-novice/1-Initiation-RDD.ipynb) : Introduction aux RDDs (Resilient Distributed Datasets) de Spark. Ce notebook couvre les bases de la création et de la manipulation des RDDs.
+  - [2-Pagerank-RDD.ipynb](2-novice/2-Pagerank-RDD.ipynb) : Implémentation de l'algorithme PageRank en utilisant des RDDs.
 
-#### Using Anaconda Navigator
+- **3-advanced** :
+  - [1-Initiation-SparkSQL.ipynb](https://github.com/lucilecpp/Pyspark/blob/main/3-advanced/1-Initiation-SparkSQL.ipynb) : Introduction à Spark SQL. Ce notebook montre comment utiliser Spark SQL pour interagir avec des DataFrames et exécuter des requêtes SQL sur des données structurées.
+  - [2-Advanced-SQL-and-ML.ipynb](https://github.com/lucilecpp/Pyspark/blob/main/3-advanced/2-Advanced-SQL-and-ML.ipynb) : Utilisation avancée de Spark SQL et introduction au machine learning avec Spark. Ce notebook montre comment utiliser les bibliothèques de machine learning de Spark pour construire et évaluer des modèles.
 
-Go to `Environments` tab then tap `Import` button. Name it `pyspark-tutorial`. In the dropdown type of file select `Pip requirement file .txt` and browse to the `requirements.txt` file and press enter to create the environment. You should now be able to select the environment.
 
-Go to `Environments` tab, select the `pyspark-tutorial` environment. When your mouse is over the environment, you should see a green arrow, click on it and select `Open with Jupyter notebook`. Then browse to the folder with all the notebooks.
+## Prérequis
 
-- you may need to define the `PYSPARK_PYTHON` environment variable so Spark workers can point to the correct Python command.
+- PySpark
+- Python
+- Jupyter Notebook
 
-#### Using Anaconda prompt
+## Installation
 
-Create Environment:
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/lucilecpp/Pyspark.git
+    ```
 
-```sh
-conda create -n pyspark-tutorial python=3.8
-conda activate pyspark-tutorial
-pip install -r requirements.txt
-# pip install bokeh jupyter numpy pandas psutil pyspark seaborn
-```
+2. Installez les dépendances :
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Run Notebook:
 
-```sh
-set PYSPARK_PYTHON=python
-jupyter lab
-```
+## Auteur
 
-Run a JupyterLab session : `jupyter lab` from the root of your project, when in your `pyspark-tutorial` conda environment.
-
-Notes: 
-- you may run into `java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.` warnings on Windows. Do not worry about it, they are necessary for remote connections only.
-- you may need to define the `PYSPARK_PYTHON` environment variable so Spark workers can point to the correct Python command.
-
-When you are done with the environment, don't forget to deactivate your Anaconda environment : `conda deactivate`
-
-## Submit
-
-At the end of the course, send your assignments by email to the instructor.
-
-**BEFORE SENDING:**
-
-- Check that your Jupyter notebook runs from start to finish when you run it from top to bottom, using `Kernel > Restart & Run All`. Clean up all unecessary cells. Your grade is based on how far the execution of the notebook goes from top to bottom without me going in.
-- Don't rename the files, and preserve the folder structure when sending the zipped project, even if you did not complete the notebook. It should look like:
-
-```
-├── 1-beginner
-│   └── 1-Initiation.ipynb
-├── 2-novice
-│   ├── FL_insurance.csv
-│   ├── 1-Initiation-RDD.ipynb
-│   └── 2-Pagerank-RDD.ipynb
-└── 3-advanced
-    ├── FL_insurance.csv
-    ├── titanic.csv
-    ├── 1-Initiation-SparkSQL.ipynb
-    └── 2-Advanced-SQL-and-ML.ipynb
-```
-
-# Contributing guide
-
-This repo is generated from a private [nbgrader](https://nbgrader.readthedocs.io) project with the solutions to the problems, which I use to autograde the students solutions.
-
-You may create a pull request with the change in the notebook so I copy-paste it in the private repo and overwrite the files. It is normal if I close and don't merge your PR while overwriting the file with your change. Hopefully I find a better way to regenerate the release folder.
+Ce projet a été realisé par Lucile PERBET dans le cadre du Master 2 SISE à l'université Lyon 2.
